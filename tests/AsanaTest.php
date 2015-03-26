@@ -4,7 +4,6 @@ use JeroenDesloovere\Asana\tests;
 
 // required to load
 require_once __DIR__ . '/../vendor/autoload.php';
-require_once __DIR__ . '/../examples/credentials.php';
 
 /*
  * This file is part of the Asana PHP class from Jeroen Desloovere.
@@ -25,9 +24,13 @@ class AsanaTest extends \PHPUnit_Framework_TestCase
     /**
      * Test that true does in fact equal true
      */
-    public function testEchoPhrase()
+    public function testApi()
     {
-        $api = new Asana();
+        $apiMock = $this
+            ->getMockBuilder('JeroenDesloovere\Asana\Asana')
+            ->disableOriginalConstructor()
+            ->getMock()
+        ;
 
         $this->assertEquals(true, true);
     }
