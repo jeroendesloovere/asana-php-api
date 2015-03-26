@@ -3,7 +3,7 @@
 [![License](http://img.shields.io/badge/license-MIT-lightgrey.svg)](https://github.com/jeroendesloovere/asana-php-api/blob/master/LICENSE)
 [![Build Status](http://img.shields.io/travis/jeroendesloovere/asana-php-api.svg)](https://travis-ci.org/jeroendesloovere/asana-php-api)
 
-> :package_api_description
+> [Asana](https://asana.com) is a task-management application used by a broad range of companies.
 
 This Asana PHP Class connects to the Asana API.
 
