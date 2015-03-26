@@ -1,15 +1,19 @@
 <?php
 
+namespace JeroenDesloovere\Asana;
+
+
+/*
+ * This file is part of the Asana PHP class from Jeroen Desloovere.
+ *
+ * For the full copyright and license information, please view the license
+ * file that was distributed with this source code.
+ */
+
 /**
- * AsanaAuth class is used for easy Oauth authentication.
- * The use of this class is totally optional and you can use any
- * other oauth implementation if prefered.
+ * In this class we test all generic functions from Asana.
  *
- * Copyright 2014 Ajimix
- * Licensed under the Apache License 2.0
- *
- * Authors: Ajimix [github.com/ajimix], Puchol [https://github.com/puchol]
- * Version: 2.0.0
+ * @author Jeroen Desloovere <info@jeroendesloovere.be>
  */
 class AsanaAuth
 {

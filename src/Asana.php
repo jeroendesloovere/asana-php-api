@@ -1,14 +1,12 @@
 <?php
-/**
- * A PHP class that acts as wrapper for Asana API. Lets make things easy! :)
+
+namespace JeroenDesloovere\Asana;
+
+/*
+ * This file is part of the Asana PHP class from Jeroen Desloovere.
  *
- * Read Asana API documentation for fully use this class http://developer.asana.com/documentation/
- *
- * Copyright 2014 Ajimix
- * Licensed under the Apache License 2.0
- *
- * Author: Ajimix [github.com/ajimix] and the contributors [github.com/ajimix/asana-api-php-class/contributors]
- * Version: 2.8.1
+ * For the full copyright and license information, please view the license
+ * file that was distributed with this source code.
  */
 
 // Define some constants for later usage.
@@ -17,6 +15,11 @@ define('ASANA_METHOD_PUT', 2);
 define('ASANA_METHOD_GET', 3);
 define('ASANA_METHOD_DELETE', 4);
 
+/**
+ * In this class we test all generic functions from Asana.
+ *
+ * @author Jeroen Desloovere <info@jeroendesloovere.be>
+ */
 class asana
 {
     private $timeout = 10;
