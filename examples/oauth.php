@@ -13,7 +13,7 @@ require_once __DIR__ . '/credentials.php';
 
 // See class comments and Asana API for extra info
 
-$asanaAuth = new AsanaAuth(
+$asanaAuth = new AsanaOauth(
     ASANA_CLIENT_ID,
     ASANA_CLIENT_SECRET,
     ASANA_REDIRECT_URL

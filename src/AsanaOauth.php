@@ -2,7 +2,6 @@
 
 namespace JeroenDesloovere\Asana;
 
-
 /*
  * This file is part of the Asana PHP class from Jeroen Desloovere.
  *
@@ -11,11 +10,11 @@ namespace JeroenDesloovere\Asana;
  */
 
 /**
- * In this class we test all generic functions from Asana.
+ * This class will authenticate with Asana.
  *
  * @author Jeroen Desloovere <info@jeroendesloovere.be>
  */
-class AsanaAuth
+class AsanaOauth
 {
     private $timeout = 10;
     private $debug = false;
