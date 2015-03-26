@@ -1,10 +1,23 @@
 <?php
-require_once('../asana.php');
-require_once('../asana-oauth.php');
+
+/*
+ * This file is part of the Showpad PHP API connection class from Jeroen Desloovere.
+ *
+ * For the full copyright and license information, please view the license
+ * file that was distributed with this source code.
+ */
+
+// required to load
+require_once __DIR__ . '/../vendor/autoload.php';
+require_once __DIR__ . '/credentials.php';
 
 // See class comments and Asana API for extra info
 
-$asanaAuth = new AsanaAuth('CLIENT_ID', 'CLIENT_SECRET', 'REDIRECT_URL');
+$asanaAuth = new AsanaAuth(
+    ASANA_CLIENT_ID,
+    ASANA_CLIENT_SECRET,
+    ASANA_REDIRECT_URL
+);
 
 if (!isset($_GET['code'])) {
     // We don't have the code so we need to authorize our app.
