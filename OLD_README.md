@@ -83,7 +83,7 @@ require_once('asana-oauth.php');
 Declare the oAuth class as:
 
 ```php
-$asanaAuth = new AsanaAuth('YOUR_APP_ID', 'YOUR_APP_SECRET', 'CALLBACK_URL');
+$asanaAuth = new AsanaOauth('YOUR_APP_ID', 'YOUR_APP_SECRET', 'CALLBACK_URL');
 $url = $asanaAuth->getAuthorizeUrl();
 ```
 

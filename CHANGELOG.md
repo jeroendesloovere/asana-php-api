@@ -58,7 +58,7 @@
 
 2.0.0, 2014-03-19
 -----------------
-- Added OAuth support with AsanaAuth class.
+- Added OAuth support with AsanaOauth class.
 - Improved class readability.
 - Improved performance.
 - Added options to getTasksByFilter.
