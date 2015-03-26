@@ -1,5 +1,5 @@
 {
-    "name": "siesqo/asana-php-api",
+    "name": "jeroendesloovere/asana-php-api",
     "type": "library",
     "description": "This Asana PHP class communicates with the Asana API.",
     "keywords": ["Asana", "api", "php"],
