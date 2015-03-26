@@ -25,7 +25,7 @@ This Asana PHP Class connects to the Asana API.
 ``` php
 use JeroenDesloovere\Asana;
 
-$Asana = new Asana();
+$api = new Asana();
 
 ```
 > [View all examples](/examples/example.php) or check [the Asana class](/src/).
