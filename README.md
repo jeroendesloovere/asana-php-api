@@ -1,129 +1,75 @@
-# Asana API PHP class
+# Asana PHP API
+[![Latest Stable Version](http://img.shields.io/packagist/v/jeroendesloovere/asana-php-api.svg)](https://packagist.org/packages/jeroendesloovere/asana-php-api)
+[![License](http://img.shields.io/badge/license-MIT-lightgrey.svg)](https://github.com/jeroendesloovere/asana-php-api/blob/master/LICENSE)
+[![Build Status](http://img.shields.io/travis/jeroendesloovere/asana-php-api.svg)](https://travis-ci.org/jeroendesloovere/asana-php-api)
 
-A PHP class that acts as wrapper for Asana API.  
-Lets make things easy! :)
+> :package_api_description
 
-It is licensed under the Apache 2 license and is Copyrighted 2014 Ajimix
+This Asana PHP Class connects to the Asana API.
 
-## Installing
+## Usage
 
-Choose your favorite flavour
+### Installation
 
-- Download the php class from github.
-- Use [Packagist](https://packagist.org/packages/ajimix/asana-api-php-class) PHP package manager.
+``` json
+{
+    "require": {
+        "jeroendesloovere/asana-php-api": "1.0.*"
+    }
+}
+```
+> Adding this code in your `composer.json` file will get the [latest asana-php-api Packagist package](https://packagist.org/packages/jeroendesloovere/asana-php-api) using [Composer](https://getcomposer.org).
 
-Finally require the asana.php file.
+### Example
 
-## Working with the class
+``` php
+use JeroenDesloovere\Asana;
 
-First declare the asana class
+$Asana = new Asana();
 
-```php
-$asana = new Asana(array(
-    'apiKey' => 'YOUR_COOL_API_KEY'
-));
+```
+> [View all examples](/examples/example.php) or check [the Asana class](/src/).
+
+[Old examples](OLD_README.md)
+
+### Tests
+
+``` bash
+$ phpunit
 ```
 
-*Optionally you can pass an accessToken instead of an apiKey if you use OAuth. Read below for more info.*
+## Documentation
 
-#### Creating a task
+The class is well documented inline. If you use a decent IDE you'll see that each method is documented with PHPDoc.
 
-```php
-$asana->createTask(array(
-   'workspace' => '176825', // Workspace ID
-   'name' => 'Hello World!', // Name of task
-   'assignee' => 'bigboss@bigcompany.com', // Assign task to...
-   'followers' => array('3714136', '5900783') // We add some followers to the task... (this time by ID)
-));
-```
+## Contributing
 
-#### Adding task to project
+Contributions are **welcome** and will be fully **credited**.
 
-```php
-$asana->addProjectToTask('THIS_TASK_ID_PLEASE', 'TO_THIS_COOL_PROJECT_ID');
-```
+### Pull Requests
 
-#### Commenting on a task
+> To add or update code
 
-```php
-$asana->commentOnTask('MY_BEAUTIFUL_TASK_ID', 'Please please! Don't assign me this task!');
-```
+- **Coding Syntax** - Please keep the code syntax consistent with the rest of the package.
+- **Add unit tests!** - Your patch won't be accepted if it doesn't have tests.
+- **Document any change in behavior** - Make sure the README and any other relevant documentation are kept up-to-date.
+- **Consider our release cycle** - We try to follow [semver](http://semver.org/). Randomly breaking public APIs is not an option.
+- **Create topic branches** - Don't ask us to pull from your master branch.
+- **One pull request per feature** - If you want to do more than one thing, send multiple pull requests.
+- **Send coherent history** - Make sure each individual commit in your pull request is meaningful. If you had to make multiple intermediate commits while developing, please squash them before submitting.
 
-#### Getting projects in all workspaces
+### Issues
 
-```php
-$asana->getProjects();
-```
+> For bug reporting or code discussions.
 
-#### Updating project info
+More info on how to work with GitHub on help.github.com.
 
-```php
-$asana->updateProject('COOL_PROJECT_ID', array(
-    'name' => 'This is a new cool project!',
-    'notes' => 'At first, it wasn't cool, but after this name change, it is!'
-));
-```
+## Credits
 
-#### Do more
+- [Jeroen Desloovere](https://github.com/jeroendesloovere)
+- [Adria Jimenez](https://github.com/ajimix)
+- [All Contributors](https://github.com/jeroendesloovere/asana-php-api/contributors)
 
-There are a [lot more methods](https://github.com/ajimix/asana-api-php-class/blob/master/asana.php) to do multiple things with asana.
+## License
 
-See the examples [inside examples folder](https://github.com/ajimix/asana-api-php-class/tree/master/examples), read the comments on the [class file]((https://github.com/ajimix/asana-api-php-class/blob/master/asana.php)) for class magic and read [Asana API documentation](http://developer.asana.com/documentation/) if you want to be a master :D
-
-Enjoy ;D
-
-## Using Asana OAuth tokens
-
-To use this API you can also create an App on Asana, in order to get an oAuth access token that gives you the same access as with an API key. Include the class:
-
-```php
-require_once('asana-oauth.php');
-```
-
-Declare the oAuth class as:
-
-```php
-$asanaAuth = new AsanaAuth('YOUR_APP_ID', 'YOUR_APP_SECRET', 'CALLBACK_URL');
-$url = $asanaAuth->getAuthorizeUrl();
-```
-
-Where YOUR_APP_ID, YOUR_APP_SECRET and CALLBACK_URL you get from your App's details on Asana. Now, redirect the browser to the result held by $url. The user will be asked to login & accept your app, after which the browser will be returned to the CALLBACK_URL, which should process the result:
-
-```php
-$code = $_GET['code'];
-$asanaAuth->getAccessToken($code);
-```
-
-And you will receive an object with the access token and a refresh token
-The token expires after one hour so you can refresh it doing the following:
-
-```php
-$asanaAuth->refreshAccessToken('ACCESS_TOKEN');
-```
-
-For a more detailes instructions on how to make oauth work check the example in examples/oauth.php
-
-## Author
-
-**Twitter:** [@ajimix](http://twitter.com/ajimix)
-
-**GitHub:** [github.com/ajimix](https://github.com/ajimix)
-
-**Contributors:** [view contributors](https://github.com/ajimix/asana-api-php-class/graphs/contributors)
-
-
-### Copyright and license
-
-Copyright 2014 Ajimix
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this work except in compliance with the License.
-You may obtain a copy of the License in the LICENSE file, or at:
-
-   http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
+The module is licensed under [MIT](./LICENSE.md). In short, this license allows you to do everything as long as the copyright statement stays present.
